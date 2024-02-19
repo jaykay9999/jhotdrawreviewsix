@@ -145,6 +145,15 @@ public class DefaultDrawing extends AbstractDrawing {
     return null;
   }
 
+
+  /**
+ * This method is used to find a figure that is behind a given object and contains a given point.
+ *
+ * @param p The point that the figure should contain.
+ * @param obj The object that the figure should be behind. This can be either a Figure or a Collection of Figures.
+ * @return The first Figure that is behind the given object and contains the given point. If no such Figure exists, returns null.
+ */
+  
   @Override
   public Figure findFigureBehind(Point2D.Double p, Object obj) {
 
