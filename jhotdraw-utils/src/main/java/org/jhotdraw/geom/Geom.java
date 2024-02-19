@@ -620,30 +620,26 @@ public final class Geom {
   }
 
   /**
-   * Resizes the <code>Rectangle2D.Double</code> both horizontally and vertically.
+   * Resizes the Rectangle2D both horizontally and vertically.
    *
-   * <p>This method modifies the <code>Rectangle2D.Double</code> so that it is <code>h</code> units
-   * larger on both the left and right side, and <code>v</code> units larger at both the top and
+   * <p>This method modifies the Rectangle2D.Double so that it is horizontal expansion units larger
+   * on both the left and right side, and vertical expansion units larger at both the top and
    * bottom.
    *
-   * <p>The new <code>Rectangle2D.Double</code> has (<code>x&nbsp;-&nbsp;h</code>, <code>
-   * y&nbsp;-&nbsp;v</code>) as its top-left corner, a width of <code>width</code>&nbsp;<code>+
-   * </code>&nbsp;<code>2h</code>, and a height of <code>height</code>&nbsp;<code>+</code>&nbsp;
-   * <code>2v</code>.
+   * <p>The new Rectangle2D.Double grows is if horizontalExpansion and verticalExpansion are positive,
    *
-   * <p>If negative values are supplied for <code>h</code> and <code>v</code>, the size of the
-   * <code>Rectangle2D.Double</code> decreases accordingly. The <code>grow</code> method does not
-   * check whether the resulting values of <code>width</code> and <code>height</code> are
-   * non-negative.
+   * <p>If negative values are supplied for horizontalExpansion and verticalExpansion, the size of the Rectangle2D decreases
+   * accordingly. The grow() method does not check whether the resulting values of width and height
+   * are non-negative.
    *
-   * @param h the horizontal expansion
-   * @param v the vertical expansion
+   * @param horizontalExpansion
+   * @param verticalExpansion
    */
-  public static void grow(Rectangle2D.Double r, double h, double v) {
-    r.x -= h;
-    r.y -= v;
-    r.width += h * 2d;
-    r.height += v * 2d;
+  public static void grow(Rectangle2D.Double r, double horizontalExpansion, double verticalExpansion) {
+    r.x -= horizontalExpansion;
+    r.y -= verticalExpansion;
+    r.width += horizontalExpansion * 2d;
+    r.height += verticalExpansion * 2d;
   }
 
   /**
