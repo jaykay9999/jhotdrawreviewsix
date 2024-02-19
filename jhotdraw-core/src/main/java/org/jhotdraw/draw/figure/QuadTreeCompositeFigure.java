@@ -170,11 +170,11 @@ public abstract class QuadTreeCompositeFigure extends AbstractAttributedComposit
     }
   }
 
-  public Figure findFigureBehind(Point2D.Double p, Figure figure) {
+  public Figure findFigureBehind(Point2D.Double p, Figure figure, double scaleDenominator) {
     boolean isBehind = false;
     for (Figure f : getFiguresFrontToBack()) {
       if (isBehind) {
-        if (f.isVisible() && f.contains(p)) {
+        if (f.isVisible() && f.contains(p, scaleDenominator)) {
           return f;
         }
       } else {
